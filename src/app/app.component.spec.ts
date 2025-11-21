@@ -1,10 +1,21 @@
 import { TestBed } from '@angular/core/testing';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [
+        provideAnimationsAsync(),
+        providePrimeNG({
+          theme: {
+            preset: Aura
+          }
+        })
+      ]
     }).compileComponents();
   });
 
@@ -24,6 +35,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, pets-booking');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Pets Booking');
   });
 });
