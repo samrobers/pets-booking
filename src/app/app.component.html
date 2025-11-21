@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="header">
+    <h1>
+      <i class="pi pi-heart"></i>
+      Pets Booking
+    </h1>
+    <p>Angular 19 with PrimeNG and Aura Theme</p>
+  </div>
+
+  <div class="content">
+    <p-card header="Welcome to Pets Booking" subheader="Base Angular 19 Project with PrimeNG">
+      <p>This is a base Angular 19 project configured with PrimeNG and the Aura theme.</p>
+      <p>The following PrimeNG components are demonstrated below:</p>
+    </p-card>
+
+    <div class="demo-section">
+      <h2>Button Components</h2>
+      <div class="button-group">
+        <p-button label="Primary" icon="pi pi-check"></p-button>
+        <p-button label="Secondary" icon="pi pi-times" severity="secondary"></p-button>
+        <p-button label="Success" icon="pi pi-star" severity="success"></p-button>
+        <p-button label="Info" icon="pi pi-info-circle" severity="info"></p-button>
+        <p-button label="Warning" icon="pi pi-exclamation-triangle" severity="warn"></p-button>
+        <p-button label="Danger" icon="pi pi-ban" severity="danger"></p-button>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Input Components</h2>
+      <div class="input-group">
+        <label for="name">Name</label>
+        <input pInputText id="name" placeholder="Enter your name" />
+        
+        <label for="calendar">Date</label>
+        <p-datepicker inputId="calendar" placeholder="Select a date"></p-datepicker>
+        
+        <label for="dropdown">Pet Type</label>
+        <p-select 
+          [options]="petTypes" 
+          [(ngModel)]="selectedPet" 
+          placeholder="Select a Pet Type"
+          optionLabel="name">
+        </p-select>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Message Component</h2>
+      <p-message severity="info" text="This is an info message using PrimeNG with Aura theme"></p-message>
+    </div>
+  </div>
+
+  <router-outlet />
+</div>
